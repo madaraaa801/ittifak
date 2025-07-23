@@ -6,23 +6,23 @@
   <title>İttifak 1</title>
   <style>
     html, body {
-      height: 100vh;
-      overflow: hidden;
-      overscroll-behavior: none;
-      touch-action: none;
-    }
-
-    body {
+      height: 100%;
       margin: 0;
-      padding: 0 20px;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: hidden; /* Scroll yok ama yenileme çalışır */
       font-family: "Segoe UI", sans-serif;
       background: linear-gradient(135deg, #1e1f22, #2c2f33);
       color: white;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 20px;
     }
 
     h1 {
