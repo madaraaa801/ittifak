@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İttifak Listesi</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #2c2f33, #23272a);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeOut 1s ease-out 3s forwards;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    .discord-logo {
+      width: 100px;
+      height: 100px;
+      animation: spin 3s linear;
+    }
+
+    #main-content {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .small-logo {
+      width: 40px;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .rgb-button {
+      padding: 15px 30px;
+      border: 3px solid;
+      border-image: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta, red) 1;
+      color: white;
+      background: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .rgb-button:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Açılış -->
+  <div id="loader">
+    <img src="https://cdn.discordapp.com/icons/112233445566778899/discordlogo.png" alt="Discord Logo" class="discord-logo" />
+  </div>
+
+  <!-- Ana içerik -->
+  <div id="main-content" class="hidden">
+    <img src="https://cdn.discordapp.com/icons/112233445566778899/discordlogo.png" alt="Logo" class="small-logo" />
+    <h1>"SUNUCU ADI"<br>İTTİFAK LİSTESİ</h1>
+    <div class="button-container">
+      <button class="rgb-button" onclick="location.href='ittifak1.html'">İTTİFAK 1</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("main-content").classList.remove("hidden");
+      document.getElementById("main-content").style.display = "flex";
+    }, 3000);
+  </script>
+</body>
+</html>
